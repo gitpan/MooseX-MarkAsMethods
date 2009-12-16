@@ -4,6 +4,7 @@ author:
   - 'Chris Weyl <cweyl@alumni.drew.edu>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
+  Perl6::Junction: 0
   Test::Moose: 0
   Test::More: 0
 configure_requires:
@@ -23,10 +24,10 @@ no_index:
 provides:
   MooseX::MarkAsMethods:
     file: lib/MooseX/MarkAsMethods.pm
-    version: 0.04
+    version: 0.05
   MooseX::MarkAsMethods::Meta::Method::Overload:
     file: lib/MooseX/MarkAsMethods.pm
-    version: 0.04
+    version: 0.05
 requires:
   B::Hooks::EndOfScope: 0
   namespace::autoclean: 0
@@ -35,4 +36,4 @@ resources:
   homepage: http://github.com/RsrchBoy/moosex-markasmethods/tree
   license: http://opensource.org/licenses/lgpl-license.php
   repository: git://github.com/RsrchBoy/moosex-markasmethods.git
-version: 0.04
+version: 0.05
