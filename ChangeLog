@@ -1,3 +1,9 @@
+Changes for MooseX::MarkAsMethods
+
+0.06 - Tue May 11 2010
+	* Added a couple additional test cases
+	* Cleaned up our dependencies (*sigh*)
+
 0.05 - Mon Dec 14 20:15:32 2009 -0800
   Chris Weyl <cweyl@alumni.drew.edu> (2):
     make Perl6::Junction required for testing
