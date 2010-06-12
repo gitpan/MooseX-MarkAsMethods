@@ -24,15 +24,15 @@ no_index:
 provides:
   MooseX::MarkAsMethods:
     file: lib/MooseX/MarkAsMethods.pm
-    version: 0.08
+    version: 0.09
   MooseX::MarkAsMethods::MetaRole::MethodMarker:
     file: lib/MooseX/MarkAsMethods.pm
 requires:
   B::Hooks::EndOfScope: 0
-  Moose: 0.90
+  Moose: 0.94
   namespace::autoclean: 0.09
 resources:
   homepage: http://github.com/RsrchBoy/moosex-markasmethods/tree
   license: http://opensource.org/licenses/lgpl-license.php
   repository: git://github.com/RsrchBoy/moosex-markasmethods.git
-version: 0.08
+version: 0.09
