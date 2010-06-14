@@ -24,7 +24,7 @@ no_index:
 provides:
   MooseX::MarkAsMethods:
     file: lib/MooseX/MarkAsMethods.pm
-    version: 0.09
+    version: 0.10
   MooseX::MarkAsMethods::MetaRole::MethodMarker:
     file: lib/MooseX/MarkAsMethods.pm
 requires:
@@ -35,4 +35,4 @@ resources:
   homepage: http://github.com/RsrchBoy/moosex-markasmethods/tree
   license: http://opensource.org/licenses/lgpl-license.php
   repository: git://github.com/RsrchBoy/moosex-markasmethods.git
-version: 0.09
+version: 0.10
