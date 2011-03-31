@@ -1,19 +1,12 @@
-#############################################################################
 #
-# Some utility routines to make testing a little easier
+# This file is part of MooseX-MarkAsMethods
 #
-# Author:  Chris Weyl (cpan:RSRCHBOY), <cweyl@alumni.drew.edu>
-# Company: No company, personal work
+# This software is Copyright (c) 2011 by Chris Weyl.
 #
-# Copyright (c) 2009, 2010  <cweyl@alumni.drew.edu>
+# This is free software, licensed under:
 #
-# This library is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public
-# License as published by the Free Software Foundation; either
-# version 2.1 of the License, or (at your option) any later version.
+#   The GNU Lesser General Public License, Version 2.1, February 1999
 #
-#############################################################################
-
 my @sugar = qw{ has around augment inner before after blessed confess };
 
 sub check_sugar_removed_ok {

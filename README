@@ -1,6 +1,9 @@
 NAME
     MooseX::MarkAsMethods - Mark overload code symbols as methods
 
+VERSION
+    version 0.11
+
 SYNOPSIS
         package Foo;
         use Moose;
@@ -11,11 +14,13 @@ SYNOPSIS
         # define overloads, etc as normal
 
         package Baz;
-        use Moose::Role
+        use Moose::Role;
         use MooseX::MarkAsMethods autoclean => 1;
 
         # overloads defined in a role will "just work" when the role is
         # composed into a class
+
+        use constant foo => 'bar';
 
         # additional methods generated outside Class::MOP/Moose can be marked, too
         __PACKAGE__->meta->mark_as_method('foo');
@@ -89,8 +94,8 @@ CAVEATS
         use MooseX::MarkAsMethods;
 
         # no -- overloads will be removed
-        use namespace::autoclean;
         use MooseX::MarkAsMethods;
+        use namespace::autoclean;
 
     The easiest way to invoke this module and clean out non-methods without
     having to worry about ordering is:
@@ -106,59 +111,18 @@ SEE ALSO
     composition; we work by marking the overloads as methods and letting
     CMOP/Moose handle them.
 
-AUTHOR
-    Chris Weyl, "<cweyl at alumni.drew.edu>"
-
 BUGS
     Please report any bugs or feature requests to "bug-moosex-markasmethods
     at rt.cpan.org", or through the web interface at
     <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=MooseX-MarkAsMethods>.
 
-TODO
-    Additional testing is required, particularly where namespace::autoclean
-    is also being used.
+AUTHOR
+    Chris Weyl <cweyl@alumni.drew.edu>
 
-SUPPORT
-    You can find documentation for this module with the perldoc command.
+COPYRIGHT AND LICENSE
+    This software is Copyright (c) 2011 by Chris Weyl.
 
-        perldoc MooseX::MarkAsMethods
+    This is free software, licensed under:
 
-    You can also look for information at:
-
-    *   RT: CPAN's request tracker
-
-        <http://rt.cpan.org/NoAuth/Bugs.html?Dist=MooseX-MarkAsMethods>
-
-    *   AnnoCPAN: Annotated CPAN documentation
-
-        <http://annocpan.org/dist/MooseX-MarkAsMethods>
-
-    *   CPAN Ratings
-
-        <http://cpanratings.perl.org/d/MooseX-MarkAsMethods>
-
-    *   Search CPAN
-
-        <http://search.cpan.org/dist/MooseX-MarkAsMethods/>
-
-COPYRIGHT & LICENSE
-    Copyright (c) 2009, 2010, Chris Weyl "<cweyl@alumni.drew.edu>".
-
-    This library is free software; you can redistribute it and/or modify it
-    under the terms of the GNU Lesser General Public License as published by
-    the Free Software Foundation; either version 2.1 of the License, or (at
-    your option) any later version.
-
-    This library is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS OR A PARTICULAR PURPOSE.
-
-    See the GNU Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public License
-    along with this library; if not, write to the
-
-        Free Software Foundation, Inc.,
-        59 Temple Place, Suite 330,
-        Boston, MA  02111-1307 USA
+      The GNU Lesser General Public License, Version 2.1, February 1999
 
