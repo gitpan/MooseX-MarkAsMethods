@@ -8,11 +8,8 @@
 #   The GNU Lesser General Public License, Version 2.1, February 1999
 #
 package MooseX::MarkAsMethods;
-BEGIN {
-  $MooseX::MarkAsMethods::AUTHORITY = 'cpan:RSRCHBOY';
-}
-BEGIN {
-  $MooseX::MarkAsMethods::VERSION = '0.11';
+{
+  $MooseX::MarkAsMethods::VERSION = '0.12';
 }
 
 # ABSTRACT: Mark overload code symbols as methods
@@ -23,7 +20,7 @@ use strict;
 use namespace::autoclean;
 
 use B::Hooks::EndOfScope;
-use Moose ();
+use Moose 0.94 ();
 use Moose::Util::MetaRole;
 
 # debugging
@@ -31,11 +28,8 @@ use Moose::Util::MetaRole;
 
 {
     package MooseX::MarkAsMethods::MetaRole::MethodMarker;
-BEGIN {
-  $MooseX::MarkAsMethods::MetaRole::MethodMarker::AUTHORITY = 'cpan:RSRCHBOY';
-}
-BEGIN {
-  $MooseX::MarkAsMethods::MetaRole::MethodMarker::VERSION = '0.11';
+{
+  $MooseX::MarkAsMethods::MetaRole::MethodMarker::VERSION = '0.12';
 }
     use Moose::Role;
     use namespace::autoclean;
@@ -142,7 +136,7 @@ MooseX::MarkAsMethods - Mark overload code symbols as methods
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 

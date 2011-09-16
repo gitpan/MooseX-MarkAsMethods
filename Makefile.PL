@@ -2,43 +2,45 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.006; }
+use 5.006;
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Mark overload code symbols as methods',
-  'AUTHOR' => 'Chris Weyl <cweyl@alumni.drew.edu>',
-  'BUILD_REQUIRES' => {
-    'Carp' => '0',
-    'File::Find' => '0',
-    'File::Temp' => '0',
-    'Perl6::Junction' => '0',
-    'Scalar::Util' => '0',
-    'Test::Moose' => '0',
-    'Test::More' => '0.94',
-    'overload' => '0',
-    'perl' => '5.004'
+  "ABSTRACT" => "Mark overload code symbols as methods",
+  "AUTHOR" => "Chris Weyl <cweyl\@alumni.drew.edu>",
+  "BUILD_REQUIRES" => {
+    "Carp" => 0,
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "Perl6::Junction" => 0,
+    "Scalar::Util" => 0,
+    "Test::Moose" => 0,
+    "Test::More" => "0.94",
+    "overload" => 0,
+    "perl" => "5.004"
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'MooseX-MarkAsMethods',
-  'EXE_FILES' => [],
-  'LICENSE' => 'lgpl',
-  'NAME' => 'MooseX::MarkAsMethods',
-  'PREREQ_PM' => {
-    'B::Hooks::EndOfScope' => '0',
-    'Moose' => '0',
-    'Moose::Role' => '0',
-    'Moose::Util::MetaRole' => '0',
-    'namespace::autoclean' => '0'
+  "DISTNAME" => "MooseX-MarkAsMethods",
+  "EXE_FILES" => [],
+  "LICENSE" => "lgpl",
+  "NAME" => "MooseX::MarkAsMethods",
+  "PREREQ_PM" => {
+    "B::Hooks::EndOfScope" => 0,
+    "Moose" => "0.94",
+    "Moose::Role" => 0,
+    "Moose::Util::MetaRole" => 0,
+    "namespace::autoclean" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.11',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.12",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
