@@ -2,7 +2,7 @@ NAME
     MooseX::MarkAsMethods - Mark overload code symbols as methods
 
 VERSION
-    version 0.12
+    version 0.13
 
 SYNOPSIS
         package Foo;

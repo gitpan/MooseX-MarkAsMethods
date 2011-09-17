@@ -9,7 +9,7 @@
 #
 package MooseX::MarkAsMethods;
 {
-  $MooseX::MarkAsMethods::VERSION = '0.12';
+  $MooseX::MarkAsMethods::VERSION = '0.13';
 }
 
 # ABSTRACT: Mark overload code symbols as methods
@@ -29,7 +29,7 @@ use Moose::Util::MetaRole;
 {
     package MooseX::MarkAsMethods::MetaRole::MethodMarker;
 {
-  $MooseX::MarkAsMethods::MetaRole::MethodMarker::VERSION = '0.12';
+  $MooseX::MarkAsMethods::MetaRole::MethodMarker::VERSION = '0.13';
 }
     use Moose::Role;
     use namespace::autoclean;
@@ -136,7 +136,7 @@ MooseX::MarkAsMethods - Mark overload code symbols as methods
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 

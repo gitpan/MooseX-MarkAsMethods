@@ -15,7 +15,6 @@ my %WriteMakefileArgs = (
     "Carp" => 0,
     "File::Find" => 0,
     "File::Temp" => 0,
-    "Perl6::Junction" => 0,
     "Scalar::Util" => 0,
     "Test::Moose" => 0,
     "Test::More" => "0.94",
@@ -38,7 +37,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.12",
+  "VERSION" => "0.13",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -6,7 +6,6 @@ build_requires:
   Carp: 0
   File::Find: 0
   File::Temp: 0
-  Perl6::Junction: 0
   Scalar::Util: 0
   Test::Moose: 0
   Test::More: 0.94
@@ -32,9 +31,9 @@ requires:
   warnings: 0
 resources:
   bugtracker: https://github.com/RsrchBoy/moosex-markasmethods/issues
-  homepage: http://search.cpan.org/dist/MooseX-MarkAsMethods/
+  homepage: http://metacpan.org/release/MooseX-MarkAsMethods/
   repository: git://github.com/RsrchBoy/moosex-markasmethods.git
-version: 0.12
+version: 0.13
 x_Dist_Zilla:
   plugins:
     -
