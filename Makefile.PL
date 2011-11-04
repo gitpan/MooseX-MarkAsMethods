@@ -12,14 +12,11 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "Mark overload code symbols as methods",
   "AUTHOR" => "Chris Weyl <cweyl\@alumni.drew.edu>",
   "BUILD_REQUIRES" => {
-    "Carp" => 0,
     "File::Find" => 0,
     "File::Temp" => 0,
-    "Scalar::Util" => 0,
     "Test::Moose" => 0,
-    "Test::More" => "0.94",
-    "overload" => 0,
-    "perl" => "5.004"
+    "Test::More" => "0.92",
+    "overload" => 0
   },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
@@ -31,13 +28,14 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "B::Hooks::EndOfScope" => 0,
     "Moose" => "0.94",
+    "Moose::Exporter" => 0,
     "Moose::Role" => 0,
     "Moose::Util::MetaRole" => 0,
-    "namespace::autoclean" => 0,
+    "namespace::autoclean" => "0.12",
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.13",
+  "VERSION" => "0.14",
   "test" => {
     "TESTS" => "t/*.t"
   }

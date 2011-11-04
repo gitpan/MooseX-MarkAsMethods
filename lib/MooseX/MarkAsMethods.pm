@@ -9,7 +9,7 @@
 #
 package MooseX::MarkAsMethods;
 {
-  $MooseX::MarkAsMethods::VERSION = '0.13';
+  $MooseX::MarkAsMethods::VERSION = '0.14';
 }
 
 # ABSTRACT: Mark overload code symbols as methods
@@ -17,11 +17,12 @@ package MooseX::MarkAsMethods;
 use warnings;
 use strict;
 
-use namespace::autoclean;
+use namespace::autoclean 0.12;
 
 use B::Hooks::EndOfScope;
 use Moose 0.94 ();
 use Moose::Util::MetaRole;
+use Moose::Exporter;
 
 # debugging
 #use Smart::Comments '###', '####';
@@ -29,7 +30,7 @@ use Moose::Util::MetaRole;
 {
     package MooseX::MarkAsMethods::MetaRole::MethodMarker;
 {
-  $MooseX::MarkAsMethods::MetaRole::MethodMarker::VERSION = '0.13';
+  $MooseX::MarkAsMethods::MetaRole::MethodMarker::VERSION = '0.14';
 }
     use Moose::Role;
     use namespace::autoclean;
@@ -68,32 +69,41 @@ use Moose::Util::MetaRole;
     }
 }
 
-sub init_meta {
-    my ($class, %options) = @_;
-    my $for_class = $options{for_class};
-
-    Moose::Util::MetaRole::apply_metaroles(
-        for => $for_class,
-        class_metaroles => {
-           class => ['MooseX::MarkAsMethods::MetaRole::MethodMarker'],
-        },
-        role_metaroles => {
-            role => ['MooseX::MarkAsMethods::MetaRole::MethodMarker'],
-        },
-    );
-
-    return $for_class->meta;
-}
+my ($import) = Moose::Exporter->build_import_methods(
+    install => [ qw{ init_meta unimport } ],
+    class_metaroles => {
+        class => ['MooseX::MarkAsMethods::MetaRole::MethodMarker'],
+    },
+    role_metaroles => {
+        role => ['MooseX::MarkAsMethods::MetaRole::MethodMarker'],
+    },
+);
 
 sub import {
-    my ($class, %args) = @_;
+    #my ($class, @args) = @_;
+    my $class = shift @_;
 
-    my $target = scalar caller;
+    # if someone is passing in Sub::Exporter-style initial hash, grab it
+    my $exporter_opts;
+    $exporter_opts = shift @_ if ref $_[0] && ref $_[0] eq 'HASH';
+    my %args = @_;
+
+    #my $target = $exporter_opts->{into} if $exporter_opts;
+    #$target  ||= scalar caller;
+    my $target
+        = defined $exporter_opts && defined $exporter_opts->{into}
+        ? $exporter_opts->{into}
+        : scalar caller
+        ;
+
     return if $target eq 'main';
-    $class->init_meta(for_class => $target);
+    #$class->init_meta(for_class => $target);
+
+    my $do_autoclean = delete $args{autoclean};
 
     on_scope_end {
 
+        ### $target
         my $meta = Class::MOP::Class->initialize($target);
 
         ### metaclass: ref $meta
@@ -118,9 +128,15 @@ sub import {
         return;
     };
 
+    ### $do_autoclean
     namespace::autoclean->import(-cleanee => $target)
-        if $args{autoclean};
+        if $do_autoclean;
 
+    @_ = $exporter_opts ? ($exporter_opts, %args) : (%args);
+    unshift @_, $class;
+
+    ### @_
+    goto &$import;
     return;
 }
 
@@ -136,7 +152,7 @@ MooseX::MarkAsMethods - Mark overload code symbols as methods
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 

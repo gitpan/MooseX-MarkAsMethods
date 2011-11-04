@@ -10,7 +10,7 @@ dist.ini
 lib/MooseX/MarkAsMethods.pm
 t/00-compile.t
 t/00-load.t
-t/000-report-versions.t
+t/000-report-versions-tiny.t
 t/100_class.t
 t/101_class_less_simple.t
 t/102_class_no_autoclean.t
@@ -20,6 +20,7 @@ t/105_via_method_name_with_fallback.t
 t/200_role_overload.t
 t/201_role_overload_using_class.t
 t/300_generated_methods.t
+t/400_import_via_into.t
 t/funcs.pm
 t/release-consistent-version.t
 t/release-eol.t
