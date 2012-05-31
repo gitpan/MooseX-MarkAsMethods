@@ -1,6 +1,5 @@
 Changes
 INSTALL
-LICENSE
 MANIFEST
 META.json
 META.yml
@@ -21,6 +20,7 @@ t/200_role_overload.t
 t/201_role_overload_using_class.t
 t/300_generated_methods.t
 t/400_import_via_into.t
+t/author-pod-spell.t
 t/funcs.pm
 t/release-consistent-version.t
 t/release-eol.t
